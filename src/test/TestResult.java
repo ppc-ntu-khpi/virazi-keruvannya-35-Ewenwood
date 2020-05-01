@@ -2,11 +2,20 @@ package test;
 
 import domain.Exercise;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class TestResult {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        int R=10;
-        System.out.println("Area of a circle for R="+R+"m is "+Exercise.Calculate(R)+"m"+'\u00B2');
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Введите число: ");
+        int number = Integer.parseInt(reader.readLine());
+        Exercise.Calculate(number);
+
+
     }
 }
